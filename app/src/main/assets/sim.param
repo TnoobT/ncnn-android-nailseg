@@ -1,0 +1,141 @@
+7767517
+139 162
+Input                    input                    0 1 input
+Convolution              Conv_19                  1 1 input onnx::Conv_410 0=16 1=3 3=2 15=1 16=1 5=1 6=432 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_0              1 2 onnx::Conv_410 onnx::Conv_410_splitncnn_0 onnx::Conv_410_splitncnn_1
+ConvolutionDepthWise     Conv_22                  1 1 onnx::Conv_410_splitncnn_1 onnx::Conv_413 0=16 1=3 4=1 5=1 6=144 7=16 9=1
+Convolution              Conv_24                  1 1 onnx::Conv_413 onnx::Add_924 0=16 1=1 5=1 6=256
+BinaryOp                 Add_25                   2 1 onnx::Add_924 onnx::Conv_410_splitncnn_0 onnx::Conv_416
+Convolution              Conv_26                  1 1 onnx::Conv_416 onnx::Shape_419 0=64 1=1 5=1 6=1024 9=1
+ConvolutionDepthWise     Conv_86                  1 1 onnx::Shape_419 onnx::Conv_483 0=64 1=3 3=2 15=1 16=1 5=1 6=576 7=64 9=1
+Convolution              Conv_88                  1 1 onnx::Conv_483 input.39 0=24 1=1 5=1 6=1536
+Split                    splitncnn_1              1 2 input.39 input.39_splitncnn_0 input.39_splitncnn_1
+Convolution              Conv_89                  1 1 input.39_splitncnn_1 onnx::Conv_488 0=72 1=1 5=1 6=1728 9=1
+ConvolutionDepthWise     Conv_91                  1 1 onnx::Conv_488 onnx::Conv_491 0=72 1=3 4=1 5=1 6=648 7=72 9=1
+Convolution              Conv_93                  1 1 onnx::Conv_491 onnx::Add_942 0=24 1=1 5=1 6=1728
+BinaryOp                 Add_94                   2 1 onnx::Add_942 input.39_splitncnn_0 onnx::Conv_494
+Split                    splitncnn_2              1 2 onnx::Conv_494 onnx::Conv_494_splitncnn_0 onnx::Conv_494_splitncnn_1
+Convolution              Conv_95                  1 1 onnx::Conv_494_splitncnn_1 onnx::Shape_497 0=72 1=1 5=1 6=1728 9=1
+ConvolutionDepthWise     Conv_155                 1 1 onnx::Shape_497 onnx::ReduceMean_561 0=72 1=5 3=2 4=1 15=2 16=2 5=1 6=1800 7=72 9=1
+Split                    splitncnn_3              1 2 onnx::ReduceMean_561 onnx::ReduceMean_561_splitncnn_0 onnx::ReduceMean_561_splitncnn_1
+Reduction                ReduceMean_157           1 1 onnx::ReduceMean_561_splitncnn_1 input.79 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_158                 1 1 input.79 onnx::Conv_564 0=24 1=1 5=1 6=1728 9=1
+Convolution              Conv_160                 1 1 onnx::Conv_564 input.87 0=72 1=1 5=1 6=1728
+HardSigmoid              HardSigmoid_161          1 1 input.87 onnx::Mul_566 0=1.666667e-01
+BinaryOp                 Mul_162                  2 1 onnx::ReduceMean_561_splitncnn_0 onnx::Mul_566 input.91 0=2
+Convolution              Conv_163                 1 1 input.91 input.99 0=40 1=1 5=1 6=2880
+Split                    splitncnn_4              1 2 input.99 input.99_splitncnn_0 input.99_splitncnn_1
+Convolution              Conv_164                 1 1 input.99_splitncnn_1 onnx::Conv_572 0=120 1=1 5=1 6=4800 9=1
+ConvolutionDepthWise     Conv_166                 1 1 onnx::Conv_572 onnx::ReduceMean_575 0=120 1=5 4=2 5=1 6=3000 7=120 9=1
+Split                    splitncnn_5              1 2 onnx::ReduceMean_575 onnx::ReduceMean_575_splitncnn_0 onnx::ReduceMean_575_splitncnn_1
+Reduction                ReduceMean_168           1 1 onnx::ReduceMean_575_splitncnn_1 input.119 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_169                 1 1 input.119 onnx::Conv_578 0=32 1=1 5=1 6=3840 9=1
+Convolution              Conv_171                 1 1 onnx::Conv_578 input.127 0=120 1=1 5=1 6=3840
+HardSigmoid              HardSigmoid_172          1 1 input.127 onnx::Mul_580 0=1.666667e-01
+BinaryOp                 Mul_173                  2 1 onnx::ReduceMean_575_splitncnn_0 onnx::Mul_580 input.131 0=2
+Convolution              Conv_174                 1 1 input.131 onnx::Add_960 0=40 1=1 5=1 6=4800
+BinaryOp                 Add_175                  2 1 onnx::Add_960 input.99_splitncnn_0 onnx::Conv_584
+Split                    splitncnn_6              1 2 onnx::Conv_584 onnx::Conv_584_splitncnn_0 onnx::Conv_584_splitncnn_1
+Convolution              Conv_176                 1 1 onnx::Conv_584_splitncnn_1 onnx::Conv_587 0=120 1=1 5=1 6=4800 9=1
+ConvolutionDepthWise     Conv_178                 1 1 onnx::Conv_587 onnx::ReduceMean_590 0=120 1=5 4=2 5=1 6=3000 7=120 9=1
+Split                    splitncnn_7              1 2 onnx::ReduceMean_590 onnx::ReduceMean_590_splitncnn_0 onnx::ReduceMean_590_splitncnn_1
+Reduction                ReduceMean_180           1 1 onnx::ReduceMean_590_splitncnn_1 input.155 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_181                 1 1 input.155 onnx::Conv_593 0=32 1=1 5=1 6=3840 9=1
+Convolution              Conv_183                 1 1 onnx::Conv_593 input.163 0=120 1=1 5=1 6=3840
+HardSigmoid              HardSigmoid_184          1 1 input.163 onnx::Mul_595 0=1.666667e-01
+BinaryOp                 Mul_185                  2 1 onnx::ReduceMean_590_splitncnn_0 onnx::Mul_595 input.167 0=2
+Convolution              Conv_186                 1 1 input.167 onnx::Add_969 0=40 1=1 5=1 6=4800
+BinaryOp                 Add_187                  2 1 onnx::Add_969 onnx::Conv_584_splitncnn_0 onnx::Conv_599
+Convolution              Conv_188                 1 1 onnx::Conv_599 onnx::Shape_603 0=240 1=1 5=1 6=9600 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_249                 1 1 onnx::Shape_603 onnx::Conv_668 0=240 1=3 3=2 15=1 16=1 5=1 6=2160 7=240 9=6 -23310=2,1.666667e-01,5.000000e-01
+Convolution              Conv_252                 1 1 onnx::Conv_668 input.195 0=80 1=1 5=1 6=19200
+Split                    splitncnn_8              1 2 input.195 input.195_splitncnn_0 input.195_splitncnn_1
+Convolution              Conv_253                 1 1 input.195_splitncnn_1 onnx::Conv_674 0=200 1=1 5=1 6=16000 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_256                 1 1 onnx::Conv_674 onnx::Conv_678 0=200 1=3 4=1 5=1 6=1800 7=200 9=6 -23310=2,1.666667e-01,5.000000e-01
+Convolution              Conv_259                 1 1 onnx::Conv_678 onnx::Add_987 0=80 1=1 5=1 6=16000
+BinaryOp                 Add_260                  2 1 onnx::Add_987 input.195_splitncnn_0 onnx::Conv_681
+Split                    splitncnn_9              1 2 onnx::Conv_681 onnx::Conv_681_splitncnn_0 onnx::Conv_681_splitncnn_1
+Convolution              Conv_261                 1 1 onnx::Conv_681_splitncnn_1 onnx::Conv_685 0=184 1=1 5=1 6=14720 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_264                 1 1 onnx::Conv_685 onnx::Conv_689 0=184 1=3 4=1 5=1 6=1656 7=184 9=6 -23310=2,1.666667e-01,5.000000e-01
+Convolution              Conv_267                 1 1 onnx::Conv_689 onnx::Add_996 0=80 1=1 5=1 6=14720
+BinaryOp                 Add_268                  2 1 onnx::Add_996 onnx::Conv_681_splitncnn_0 onnx::Conv_692
+Split                    splitncnn_10             1 2 onnx::Conv_692 onnx::Conv_692_splitncnn_0 onnx::Conv_692_splitncnn_1
+Convolution              Conv_269                 1 1 onnx::Conv_692_splitncnn_1 onnx::Conv_696 0=184 1=1 5=1 6=14720 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_272                 1 1 onnx::Conv_696 onnx::Conv_700 0=184 1=3 4=1 5=1 6=1656 7=184 9=6 -23310=2,1.666667e-01,5.000000e-01
+Convolution              Conv_275                 1 1 onnx::Conv_700 onnx::Add_1005 0=80 1=1 5=1 6=14720
+BinaryOp                 Add_276                  2 1 onnx::Add_1005 onnx::Conv_692_splitncnn_0 onnx::Conv_703
+Convolution              Conv_277                 1 1 onnx::Conv_703 onnx::Conv_707 0=480 1=1 5=1 6=38400 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_280                 1 1 onnx::Conv_707 onnx::ReduceMean_711 0=480 1=3 4=1 5=1 6=4320 7=480 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_11             1 2 onnx::ReduceMean_711 onnx::ReduceMean_711_splitncnn_0 onnx::ReduceMean_711_splitncnn_1
+Reduction                ReduceMean_283           1 1 onnx::ReduceMean_711_splitncnn_1 input.275 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_284                 1 1 input.275 onnx::Conv_714 0=120 1=1 5=1 6=57600 9=1
+Convolution              Conv_286                 1 1 onnx::Conv_714 input.283 0=480 1=1 5=1 6=57600
+HardSigmoid              HardSigmoid_287          1 1 input.283 onnx::Mul_716 0=1.666667e-01
+BinaryOp                 Mul_288                  2 1 onnx::ReduceMean_711_splitncnn_0 onnx::Mul_716 input.287 0=2
+Convolution              Conv_289                 1 1 input.287 input.295 0=112 1=1 5=1 6=53760
+Split                    splitncnn_12             1 2 input.295 input.295_splitncnn_0 input.295_splitncnn_1
+Convolution              Conv_290                 1 1 input.295_splitncnn_1 onnx::Conv_723 0=672 1=1 5=1 6=75264 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_293                 1 1 onnx::Conv_723 onnx::ReduceMean_727 0=672 1=3 4=1 5=1 6=6048 7=672 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_13             1 2 onnx::ReduceMean_727 onnx::ReduceMean_727_splitncnn_0 onnx::ReduceMean_727_splitncnn_1
+Reduction                ReduceMean_296           1 1 onnx::ReduceMean_727_splitncnn_1 input.315 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_297                 1 1 input.315 onnx::Conv_730 0=168 1=1 5=1 6=112896 9=1
+Convolution              Conv_299                 1 1 onnx::Conv_730 input.323 0=672 1=1 5=1 6=112896
+HardSigmoid              HardSigmoid_300          1 1 input.323 onnx::Mul_732 0=1.666667e-01
+BinaryOp                 Mul_301                  2 1 onnx::ReduceMean_727_splitncnn_0 onnx::Mul_732 input.327 0=2
+Convolution              Conv_302                 1 1 input.327 onnx::Add_1023 0=112 1=1 5=1 6=75264
+BinaryOp                 Add_303                  2 1 onnx::Add_1023 input.295_splitncnn_0 onnx::Conv_736
+Convolution              Conv_304                 1 1 onnx::Conv_736 onnx::Shape_740 0=672 1=1 2=2 5=1 6=75264 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_365                 1 1 onnx::Shape_740 onnx::ReduceMean_805 0=672 1=5 2=2 4=4 5=1 6=16800 7=672 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_14             1 2 onnx::ReduceMean_805 onnx::ReduceMean_805_splitncnn_0 onnx::ReduceMean_805_splitncnn_1
+Reduction                ReduceMean_368           1 1 onnx::ReduceMean_805_splitncnn_1 input.351 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_369                 1 1 input.351 onnx::Conv_808 0=168 1=1 2=2 5=1 6=112896 9=1
+Convolution              Conv_371                 1 1 onnx::Conv_808 input.359 0=672 1=1 2=2 5=1 6=112896
+HardSigmoid              HardSigmoid_372          1 1 input.359 onnx::Mul_810 0=1.666667e-01
+BinaryOp                 Mul_373                  2 1 onnx::ReduceMean_805_splitncnn_0 onnx::Mul_810 input.363 0=2
+Convolution              Conv_374                 1 1 input.363 input.371 0=160 1=1 2=2 5=1 6=107520
+Split                    splitncnn_15             1 2 input.371 input.371_splitncnn_0 input.371_splitncnn_1
+Convolution              Conv_375                 1 1 input.371_splitncnn_1 onnx::Conv_817 0=960 1=1 2=2 5=1 6=153600 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_378                 1 1 onnx::Conv_817 onnx::ReduceMean_821 0=960 1=5 2=2 4=4 5=1 6=24000 7=960 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_16             1 2 onnx::ReduceMean_821 onnx::ReduceMean_821_splitncnn_0 onnx::ReduceMean_821_splitncnn_1
+Reduction                ReduceMean_381           1 1 onnx::ReduceMean_821_splitncnn_1 input.391 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_382                 1 1 input.391 onnx::Conv_824 0=240 1=1 2=2 5=1 6=230400 9=1
+Convolution              Conv_384                 1 1 onnx::Conv_824 input.399 0=960 1=1 2=2 5=1 6=230400
+HardSigmoid              HardSigmoid_385          1 1 input.399 onnx::Mul_826 0=1.666667e-01
+BinaryOp                 Mul_386                  2 1 onnx::ReduceMean_821_splitncnn_0 onnx::Mul_826 input.403 0=2
+Convolution              Conv_387                 1 1 input.403 onnx::Add_1041 0=160 1=1 2=2 5=1 6=153600
+BinaryOp                 Add_388                  2 1 onnx::Add_1041 input.371_splitncnn_0 onnx::Conv_830
+Split                    splitncnn_17             1 2 onnx::Conv_830 onnx::Conv_830_splitncnn_0 onnx::Conv_830_splitncnn_1
+Convolution              Conv_389                 1 1 onnx::Conv_830_splitncnn_1 onnx::Conv_834 0=960 1=1 2=2 5=1 6=153600 9=6 -23310=2,1.666667e-01,5.000000e-01
+ConvolutionDepthWise     Conv_392                 1 1 onnx::Conv_834 onnx::ReduceMean_838 0=960 1=5 2=2 4=4 5=1 6=24000 7=960 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_18             1 2 onnx::ReduceMean_838 onnx::ReduceMean_838_splitncnn_0 onnx::ReduceMean_838_splitncnn_1
+Reduction                ReduceMean_395           1 1 onnx::ReduceMean_838_splitncnn_1 input.427 0=3 1=0 -23303=2,1,2 4=1 5=1
+Convolution              Conv_396                 1 1 input.427 onnx::Conv_841 0=240 1=1 2=2 5=1 6=230400 9=1
+Convolution              Conv_398                 1 1 onnx::Conv_841 input.435 0=960 1=1 2=2 5=1 6=230400
+HardSigmoid              HardSigmoid_399          1 1 input.435 onnx::Mul_843 0=1.666667e-01
+BinaryOp                 Mul_400                  2 1 onnx::ReduceMean_838_splitncnn_0 onnx::Mul_843 input.439 0=2
+Convolution              Conv_401                 1 1 input.439 onnx::Add_1050 0=160 1=1 2=2 5=1 6=153600
+BinaryOp                 Add_402                  2 1 onnx::Add_1050 onnx::Conv_830_splitncnn_0 onnx::Conv_847
+Convolution              Conv_403                 1 1 onnx::Conv_847 onnx::Conv_851 0=960 1=1 2=2 5=1 6=153600 9=6 -23310=2,1.666667e-01,5.000000e-01
+Split                    splitncnn_19             1 5 onnx::Conv_851 onnx::Conv_851_splitncnn_0 onnx::Conv_851_splitncnn_1 onnx::Conv_851_splitncnn_2 onnx::Conv_851_splitncnn_3 onnx::Conv_851_splitncnn_4
+Convolution              Conv_406                 1 1 onnx::Conv_851_splitncnn_4 onnx::Concat_854 0=256 1=1 5=1 6=245760 9=1
+ConvolutionDepthWise     Conv_408                 1 1 onnx::Conv_851_splitncnn_3 input.463 0=960 1=3 2=12 4=12 6=8640 7=960
+Convolution              Conv_409                 1 1 input.463 onnx::Concat_858 0=256 1=1 5=1 6=245760 9=1
+ConvolutionDepthWise     Conv_411                 1 1 onnx::Conv_851_splitncnn_2 input.475 0=960 1=3 2=24 4=24 6=8640 7=960
+Convolution              Conv_412                 1 1 input.475 onnx::Concat_862 0=256 1=1 5=1 6=245760 9=1
+ConvolutionDepthWise     Conv_414                 1 1 onnx::Conv_851_splitncnn_1 input.487 0=960 1=3 2=36 4=36 6=8640 7=960
+Convolution              Conv_415                 1 1 input.487 onnx::Concat_866 0=256 1=1 5=1 6=245760 9=1
+Pooling                  GlobalAveragePool_423    1 1 onnx::Conv_851_splitncnn_0 input.499 0=1 4=1
+InnerProduct             Conv_424                 1 1 input.499 x 0=256 1=1 2=245760 9=1
+Interp                   Resize_438               1 1 x onnx::Concat_889 0=2 3=50 4=50
+Concat                   Concat_439               5 1 onnx::Concat_854 onnx::Concat_858 onnx::Concat_862 onnx::Concat_866 onnx::Concat_889 input.511
+Convolution              Conv_440                 1 1 input.511 input.523 0=256 1=1 5=1 6=327680 9=1
+ConvolutionDepthWise     Conv_442                 1 1 input.523 input.527 0=256 1=3 4=1 6=2304 7=256
+Convolution              Conv_443                 1 1 input.527 input.539 0=256 1=1 5=1 6=65536 9=1
+Interp                   Resize_446               1 1 input.539 onnx::Concat_902 0=2 1=4.000000e+00 2=4.000000e+00 6=1
+Convolution              Conv_447                 1 1 onnx::Conv_494_splitncnn_0 onnx::Concat_905 0=48 1=1 5=1 6=1152 9=1
+Concat                   Concat_449               2 1 onnx::Concat_902 onnx::Concat_905 input.551
+ConvolutionDepthWise     Conv_450                 1 1 input.551 input.555 0=304 1=3 4=1 6=2736 7=304
+Convolution              Conv_451                 1 1 input.555 input.567 0=256 1=1 5=1 6=77824 9=1
+Convolution              Conv_453                 1 1 input.567 input.571 0=2 1=1 5=1 6=512
+Interp                   Resize_455               1 1 input.571 onnx::Sigmoid_916 0=2 1=4.000000e+00 2=4.000000e+00 6=1
+Sigmoid                  Sigmoid_456              1 1 onnx::Sigmoid_916 output

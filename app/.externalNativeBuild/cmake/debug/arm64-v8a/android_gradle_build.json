@@ -1,0 +1,62 @@
+{
+  "stringTable": {
+    "0": "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/.externalNativeBuild/cmake/debug/arm64-v8a",
+    "1": "--target=aarch64-none-linux-android24 --gcc-toolchain=/Users/tfj/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/tfj/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dsegnail_EXPORTS -isystem /Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/include/ncnn -isystem /Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info -fPIC -fno-rtti -fno-exceptions -std=gnu++11"
+  },
+  "buildFiles": [
+    "/Users/tfj/Library/Android/sdk/ndk/21.3.6528147/build/cmake/platforms.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/glslang/glslang-config-version.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/OpenCVConfig.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/abi-arm64-v8a/OpenCVModules-release.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/abi-arm64-v8a/OpenCVModules.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/ncnn/ncnn.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/glslang/glslang-targets.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/CMakeLists.txt",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/abi-arm64-v8a/OpenCVConfig.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/glslang/glslang-config.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/ncnn/ncnnConfig.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/opencv-mobile-4.6.0-android/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/glslang/glslang-targets-release.cmake",
+    "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ncnn-20221128-android-vulkan/arm64-v8a/lib/cmake/ncnn/ncnn-release.cmake",
+    "/Users/tfj/Library/Android/sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/tfj/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/.externalNativeBuild/cmake/debug/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "segnail-Debug-arm64-v8a": {
+      "buildCommand": "/Users/tfj/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/.externalNativeBuild/cmake/debug/arm64-v8a --target segnail",
+      "buildType": "debug",
+      "toolchain": "1076937440",
+      "abi": "arm64-v8a",
+      "artifactName": "segnail",
+      "files": [
+        {
+          "src": "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/seg_jni.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/seg.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/src/main/jni/ndkcamera.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "/Users/tfj/Desktop/workspace/code/AndroidProjects/ncnn-android-nailseg/app/build/intermediates/cmake/debug/obj/arm64-v8a/libsegnail.so"
+    }
+  },
+  "toolchains": {
+    "1076937440": {
+      "cppCompilerExecutable": "/Users/tfj/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
